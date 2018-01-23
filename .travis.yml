@@ -3,7 +3,7 @@ language: bash
 services:
   - docker
 before_script:
-  - docker build . 
+  - docker build . --tag=my-application
 after_success:
   - docker images
 deploy:
