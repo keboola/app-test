@@ -1,4 +1,4 @@
 # test
 
 Run with 
-docker run -i -t --entrypoint=/code/setup.sh --volume .:/code/ ruby
+docker run -i -t --entrypoint=/code/setup.sh --volume $(pwd):/code/ ruby
