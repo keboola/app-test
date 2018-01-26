@@ -1,0 +1,14 @@
+{
+    "name": "keboola/app-luckyguess",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^1.21"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Keboola\\AppLuckyGuess\\": "src/",
+            "Keboola\\AppLuckyGuess\\Tests\\": "Tests/"
+        }
+    }
+}
