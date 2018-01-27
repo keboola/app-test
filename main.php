@@ -8,6 +8,9 @@ $handler = new Monolog\Handler\StreamHandler('php://stdout', \Monolog\Logger::IN
 $logger = new Monolog\Logger("logger", [$errHandler, $handler]);
 $logger->info("M: info");
 $logger->error("M: error");
+$formatter = new \Monolog\Formatter\LineFormatter("%message%\n");
+$errHandler->setFormatter($formatter);
+$logger->setFormatter($formatter);
 
 class UserException extends Exception
 {
