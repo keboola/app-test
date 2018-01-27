@@ -2,9 +2,9 @@
 
 require ('vendor/autoload.php');
 
-$logger = new Monolog\Logger("logger");
-$stream = fopen('php://stderr', 'r');
-$logger->pushHandler(new \Monolog\Handler\StreamHandler($stream));
+$errHandler = new Monolog\Handler\StreamHandler('php://stderr', \Monolog\Logger::NOTICE, false);
+$handler = new Monolog\Handler\StreamHandler('php://stdout', \Monolog\Logger::INFO);
+$logger = new Monolog\Logger("logger", [$errHandler, $handler]);
 $logger->info("M: info");
 $logger->error("M: error");
 
