@@ -36,10 +36,10 @@ function b(Monolog\Logger $logger)
 
 function c(Monolog\Logger $logger)
 {
-	$logger->info("MI: b");
+	$logger->info("MI: c");
 	echo "I'm a c";
 	sleep(2);
-	$logger->error("ME: b");	
+	$logger->error("ME: c");	
 	d($logger);
 }
 
@@ -49,8 +49,8 @@ function d(Monolog\Logger $logger)
 	echo "I'm a d and throwing up";
 	sleep(2);
 	$logger->error("ME: d");	
-	//throw new UserException("kilim idai");
-	throw new ApplicationException("kilim idai pinis");
+	throw new UserException("kilim idai");
+	//throw new ApplicationException("kilim idai pinis");
 }
 
 try {
