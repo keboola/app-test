@@ -5,12 +5,12 @@ ob_implicit_flush(true);
 
 $errHandler = new Monolog\Handler\StreamHandler('php://stderr', \Monolog\Logger::NOTICE, false);
 $handler = new Monolog\Handler\StreamHandler('php://stdout', \Monolog\Logger::INFO);
+$formatter = new \Monolog\Formatter\LineFormatter("%message%\n");
+$errHandler->setFormatter($formatter);
+$handler->setFormatter($formatter);
 $logger = new Monolog\Logger("logger", [$errHandler, $handler]);
 $logger->info("M: info");
 $logger->error("M: error");
-$formatter = new \Monolog\Formatter\LineFormatter("%message%\n");
-$errHandler->setFormatter($formatter);
-$logger->setFormatter($formatter);
 
 class UserException extends Exception
 {
