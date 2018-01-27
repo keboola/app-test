@@ -1,6 +1,7 @@
 <?php
 
 require ('vendor/autoload.php');
+ob_implicit_flush(true);
 
 $errHandler = new Monolog\Handler\StreamHandler('php://stderr', \Monolog\Logger::NOTICE, false);
 $handler = new Monolog\Handler\StreamHandler('php://stdout', \Monolog\Logger::INFO);
