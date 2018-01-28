@@ -53,8 +53,8 @@ function d(Monolog\Logger $logger)
 	echo "I'm a d and throwing up";
 	sleep(2);
 	$logger->error("ME: d");	
-	throw new UserException("kilim idai");
-	//throw new ApplicationException("kilim idai pinis");
+	//throw new UserException("kilim idai");
+	throw new ApplicationException("kilim idai pinis");
 }
 
 try {
